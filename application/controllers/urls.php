@@ -26,9 +26,14 @@ class Urls_Controller extends Base_Controller {
         return View::make('url.show')->with('shortened', $shortened);
     }
 
-	public function get_show()
+	public function get_show($shortened)
     {
-
+        // If the url exist
+        $url = Url::where_shortened($shortened)->first();
+        if($url)
+            return Redirect::to($url->url);
+        // Else
+        return Response::error('404');
     }
 
 	public function get_edit()
@@ -39,7 +44,6 @@ class Urls_Controller extends Base_Controller {
 	public function get_new()
     {
         return View::make('url.new');
-
     }
 
 	public function put_update()
