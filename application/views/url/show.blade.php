@@ -1,1 +1,8 @@
-This is the /Users/arnaud/Sites/url-shortener/application/views/url/show.blade.php view
+@layout('master')
+
+@section('container')
+
+    <p> Here is your shorten URL : </p>
+    <p> {{ $shortened }} </p>
+
+@endsection
