@@ -1,13 +1,9 @@
 <?php
 
 // url Resource
-//Route::get('urls', array('as' => 'urls', 'uses' => 'urls@index'));
 Route::get('(:any)', array('as' => 'url', 'uses' => 'urls@show'));
 Route::get('/, new', array('as' => 'new_url', 'uses' => 'urls@new'));
-//Route::get('urls/(:any)/edit', array('as' => 'edit_url', 'uses' => 'urls@edit'));
 Route::post('/', 'urls@create');
-//Route::put('urls/(:any)', 'urls@update');
-//Route::delete('urls/(:any)', 'urls@destroy');
 
 /*
 |--------------------------------------------------------------------------
