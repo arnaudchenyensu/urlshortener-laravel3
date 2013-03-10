@@ -4,13 +4,12 @@ class Urls_Controller extends Base_Controller {
 
 	public $restful = true;
 
-	public function get_index()
-    {
-    }
-
 	public function post_create()
     {
         // Validate
+        $validation = Url::validate(Input::get());
+        if($validation!==true)
+            return Redirect::to('/')->with_errors($validation->errors);
 
         // If the url is already in the table
         $url = Input::get('url');

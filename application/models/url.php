@@ -4,6 +4,15 @@ class Url extends Eloquent
 {
     public static $timestamps = false;
 
+    public static $rules = array('url' => 'required|url');
+
+    public static function validate($input) {
+        $validation = Validator::make($input, static::$rules);
+        if($validation->fails())
+            return($validation);
+        return true;
+    }
+
     public static function getUniqueUrl() {
         $shortened = null;
         while($shortened==null) {

@@ -3,9 +3,10 @@
 @section('container')
 
     {{ Form::open('/') }}
-        {{ Form::label('url', 'Type your URL to shorten:') }}
+        <p> {{ Form::label('url', 'Type your URL to shorten:') }} </p>
         {{ Form::text('url') }}
-        {{ Form::submit('Shorten URL') }}
+        {{ $errors->first('url', '<p class="error">:message</p>')}}
+        <div> {{ Form::submit('Shorten URL', array('class' => 'btn btn-success')) }} </div>
     {{ Form::close() }}
 
 @endsection

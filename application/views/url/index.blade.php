@@ -1,1 +1,0 @@
-This is the /Users/arnaud/Sites/url-shortener/application/views/url/index.blade.php view
