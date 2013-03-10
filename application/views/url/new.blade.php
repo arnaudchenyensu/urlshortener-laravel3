@@ -3,9 +3,9 @@
 @section('container')
 
     {{ Form::open('/') }}
-        {{ Form::label('url', 'Type your URL to shorten:') }}
+        <p> {{ Form::label('url', 'Type your URL to shorten:') }} </p>
         {{ Form::text('url') }}
-        {{ Form::submit('Shorten URL') }}
+        <div> {{ Form::submit('Shorten URL', array('class' => 'btn btn-success')) }} </div>
     {{ Form::close() }}
 
 @endsection
